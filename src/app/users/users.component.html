@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <a routerLink="new" class="btn btn-success"><span class="fas fa-fw fa-plus"></span>Add New User</a>
+  <hr>
+  <div class="table-responsive mt-3">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>picture</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Location</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Id</th>
+          <th>picture</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Location</th>
+          <th>Action</th>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>YOUR PIC</td>
+          <td>{{user.data.name}}</td>
+          <td>{{user.data.email}}</td>
+          <td>{{user.data.phone}}</td>
+          <td>{{user.data.location}}</td>
+          <td>
+            <a routerLink="{{user.id}}/edit">edit </a>
+            <a href="javascript:0" (click)="deleteUser(user.id)"> delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
